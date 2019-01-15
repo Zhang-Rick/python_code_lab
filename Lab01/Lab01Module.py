@@ -49,13 +49,24 @@ def sortInt(num):
     n.join(array)
     return n
 
-def findProduct():
-    l= [[3,9],[4,8]]
-    a = [[1,2],[2,1],[4,5]]
+def findProduct(M1,M2):
     i = 0
-    while (i < len(l)):
-        l[i]
-    print(len(a))
+    j = 0
+    k = 0
+    z = 0
+    array = []
+    array2 = []
+    while (z < len(M1)):
+        while (i < len(M2)):
+            while (j < len(M1[1])):
+                while (k < len(M2[1])):
+                    a = M1[z][j]*M2[i][k]
+                    array.append(a)
+                    k += 1
+                j += 1
+            array2.append(array)
+            i += 1
+        z += 1
     return
 if __name__ == "__main__":
     #findLongest()
