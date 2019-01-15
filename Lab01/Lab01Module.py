@@ -16,18 +16,18 @@ def findLongest():
 #BUT the number in this array cannot exist twice
 #in addition it should return an integer and it is an odd!
 #first case is exclusive
-    array = []
+    array = [1,2,4,8,16,32,64,128,256]
+    array3 = []
     num = 1
     while num <= 1000000:
-        array.append(num)
+
         if num != 1 and (num - 1) % 3 == 0 and num not in array and ((num - 1) / 3 % 2) == 1:
             num = int((num - 1) / 3)
         else:
             num = num * 2
-
-    array = array[::-1]
-   # print(array[0],len(array))
-    return array[0]
+        array3.append(num)
+    array3 = array3[::-1]
+    return array3[1]
 
 def findSmallest():
    n = 1
@@ -76,9 +76,9 @@ def findProduct(M1,M2):
     print(array2)
     return
 if __name__ == "__main__":
-    #findLongest()
+    findLongest()
 
-    M1 = [[1,2],[3,4]]
-    M2 = [[0 ,5],[6,7]]
-    findSmallest()
-    findProduct(M1,M2)
+    #M1 = [[1,2],[3,4]]
+    #M2 = [[0 ,5],[6,7]]
+    #findSmallest()
+    #findProduct(M1,M2)
