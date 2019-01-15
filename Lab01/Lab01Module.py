@@ -67,10 +67,12 @@ def findProduct(M1,M2):
             array2.append(array)
             i += 1
         z += 1
+    print(array2)
     return
 if __name__ == "__main__":
     #findLongest()
 
-
+    M1 = [[1,2],[3,4]]
+    M2 = [[0 ,5],[6,7]]
     findSmallest()
-    findProduct()
+    findProduct(M1,M2)
