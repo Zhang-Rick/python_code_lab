@@ -75,8 +75,8 @@ def getSubMatrixSum(startRowIndex,endRowIndex,startColumnIndex,endColumnIndex):
     filename = os.path.join(DataPath,'matrix.dat')
     with open(filename,'r') as f:
         line = f.read().splitlines()
-    print(line[1],'\n')
-    print(line[2],'\n')
+    #print(line[0],'\n')
+    #print(line[1],'\n')
     sum = 0
     i = 1
     startColumnIndex -= 1
@@ -86,13 +86,13 @@ def getSubMatrixSum(startRowIndex,endRowIndex,startColumnIndex,endColumnIndex):
         array = line[startRowIndex]
         #print(startRowIndex)
         #print(endRowIndex)
-        print(array)
+        #print(array)
         while j < endColumnIndex:
             #print(array.split(' '))
             #print(startColumnIndex)
             #print(endColumnIndex)
             num = int(array.split(' ')[j])
-            print(num)
+            #print(num)
             sum += num
             j += 1
         j =startColumnIndex
@@ -101,9 +101,9 @@ def getSubMatrixSum(startRowIndex,endRowIndex,startColumnIndex,endColumnIndex):
 
 
 
-if __name__  == "__main__":
+#if __name__  == "__main__":
     #print(getCodeFor('Florida'))
     #find(47906)
     #print(getMinLatitude('Florida'))
     #print(getMaxLongitude('Florida'))
-    print(getSubMatrixSum(1,2,3,5))
+    #print(getSubMatrixSum(1,2,3,4))
