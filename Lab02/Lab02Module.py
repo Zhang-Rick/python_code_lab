@@ -27,7 +27,7 @@ def getCodeFor(stateName):
                 state = line[i].split(' ')
             break
         i += 1
-    return array
+    return sorted(array)
 
 def getMinLatitude(stateName):
     array = getCodeFor(stateName)
@@ -101,8 +101,8 @@ def getSubMatrixSum(startRowIndex,endRowIndex,startColumnIndex,endColumnIndex):
 
 
 
-#if __name__  == "__main__":
-    #print(getCodeFor('Florida'))
+if __name__  == "__main__":
+    print(getCodeFor('Florida'))
     #find(47906)
     #print(getMinLatitude('Florida'))
     #print(getMaxLongitude('Florida'))
