@@ -71,12 +71,39 @@ def find(zipcode):
             return i
         i += 1
 
-
+def getSubMatrixSum(startRowIndex,endRowIndex,startColumnIndex,endColumnIndex):
+    filename = os.path.join(DataPath,'matrix.dat')
+    with open(filename,'r') as f:
+        line = f.read().splitlines()
+    print(line[1],'\n')
+    print(line[2],'\n')
+    sum = 0
+    i = 1
+    startColumnIndex -= 1
+    startRowIndex -= 1
+    j = startColumnIndex
+    while startRowIndex < endRowIndex:
+        array = line[startRowIndex]
+        #print(startRowIndex)
+        #print(endRowIndex)
+        print(array)
+        while j < endColumnIndex:
+            #print(array.split(' '))
+            #print(startColumnIndex)
+            #print(endColumnIndex)
+            num = int(array.split(' ')[j])
+            print(num)
+            sum += num
+            j += 1
+        j =startColumnIndex
+        startRowIndex += 1
+    return sum
 
 
 
 if __name__  == "__main__":
-    print(getCodeFor('Florida'))
+    #print(getCodeFor('Florida'))
     #find(47906)
     #print(getMinLatitude('Florida'))
-    print(getMaxLongitude('Florida'))
+    #print(getMaxLongitude('Florida'))
+    print(getSubMatrixSum(1,2,3,5))
