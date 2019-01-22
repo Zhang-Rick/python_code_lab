@@ -101,8 +101,8 @@ def getSubMatrixSum(startRowIndex,endRowIndex,startColumnIndex,endColumnIndex):
 
 
 
-if __name__  == "__main__":
-    print(getCodeFor('Florida'))
+#if __name__  == "__main__":
+    #print(getCodeFor('Florida'))
     #find(47906)
     #print(getMinLatitude('Florida'))
     #print(getMaxLongitude('Florida'))
