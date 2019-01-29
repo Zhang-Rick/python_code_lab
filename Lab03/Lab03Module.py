@@ -6,6 +6,7 @@
 #######################################################
 import os      # List of  module  import  statements
 import sys     # Each  one on a line
+from collections import Counter
 # Module  level  Variables. (Write  this  statement  verbatim .)
 #######################################################
 
@@ -157,10 +158,45 @@ def getCount(stateName2):
     return answer
     #if state not in statePosition.keys():
         #raise ValueError("ValueErroe")
+def getReport():
+    filename3 = os.path.join(DataPath, 'students.dat')
+    with open(filename3) as f:
+        studentsLines = f.read().splitlines()
+    StudentsExtensionMap = {}
+    i = 2
+    while i < len(studentsLines):
+        extension = list(filter(None,studentsLines[i].split(' ')))[3]
+        Name = list(filter(None,studentsLines[i].split(' ')))[0] + ' ' + list(filter(None,studentsLines[i].split(' ')))[1]
+        StudentsExtensionMap[Name] = list(filter(None,studentsLines[i].split(' ')))[3].split('x')[1]
+        i += 1
+    #print(StudentsExtensionMap)
+    PhoneDurationMap = {}
+    DurationPhoneMap = {}
+    filename4 = os.path.join(DataPath, 'calls.dat')
+    with open(filename4) as f:
+        callsLines = f.read().splitlines()
+    i = 2
+    while i < len(callsLines):
+        Duration = list(filter(None,callsLines[i].split(' ')))[2]
+        extension = list(filter(None,callsLines[i].split(' ')))[0].split('-')[2]
+        #print(Duration,' ',extension)
+        PhoneDurationMap[extension] = Duration
+        DurationPhoneMap[Duration] = extension
+        i += 1
+    ExtensionTimesMap = {}
+    i = 0
+    while i < len(DurationPhoneMap.keys()):
+        if type(ExtensionTimesMap[DurationPhoneMap[list(DurationPhoneMap.keys())[i]]]) == type(1):
+            ExtensionTimesMap[DurationPhoneMap[list(DurationPhoneMap.keys())[i]]] += 1
+        else:
+            ExtensionTimesMap[DurationPhoneMap[list(DurationPhoneMap.keys())[i]]] = 1
+        i += 1
+    print(ExtensionTimesMap)
 
-if __name__  == "__main__":
-    getStateByCounty('Coshocton')
-    getCount('Illinois')
+#if __name__  == "__main__":
+    #getStateByCounty('Coshocton')
+    #getCount('Illinois')
+    #getReport()
     #find(47906)
     #print(getMinLatitude('Florida'))
     #print(getMaxLongitude('Florida'))
