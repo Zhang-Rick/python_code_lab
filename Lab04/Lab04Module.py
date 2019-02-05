@@ -43,7 +43,7 @@ def getDifference(provider1,provider2):
         if array1[i] not in array2:
             answer.append(array1[i])
         i +=1
-    print(answer)
+    #print(answer)
     return answer
 
 def getPriceOf(sbc,provider):
@@ -110,15 +110,54 @@ def getFilter():
     with open(filename) as f:
         lines = f.read().splitlines()
     i = 1
+    array =[]
     while i < len(lines):
         phoneNum = list(filter(None,lines[i].split(' ')))[1].split(',')[1] + list(filter(None,lines[i].split(' ')))[2]
+        phoneNum1 = phoneNum.split('(')[1].split(')')[0] +phoneNum.split('(')[1].split(')')[1]
+        phoneNum2 = phoneNum1.split('-')[0] +phoneNum1.split('-')[1]
+        array.append(phoneNum2)
         i += 1
-    print(phoneNum)
+    #print(array,'\n',len(array))
+    j = 0
+    array1 = []
+    array4 =[]
+    answerset = []
+    while j < len(array):
+        k = 0
+        while k < 8:
+            setanswer = array[j][k]+array[j][k+1]+array[j][k+2]
+            #print(str(setanswer))
+            array4.append(setanswer)
+            answerset.append(setanswer)
+            k += 1
+        array1.append(answerset)
+        answerset = []
+        j += 1
+    #print(array4,'\n',len(array4))
+    i = 0
+    array2 = []
+    array3 = []
+    array2 = array1
 
+    while i < 99:
+        k = 0
 
-if __name__ == "__main__":
-    #getDifference('provider1', 'provider2')
-    #getPriceOf('Rasp. Pi-4702MQ', 'provider2')
+        print(array2,'\n',len(array2))
+        array2.remove(array2[i])
+        while k < 800:
+
+            if array4[k-1] not in array2:
+                array3.append(array4[k-1])
+            k += 1
+        array2 = array1
+        print(len(array1),array1)
+        i += 1
+    #print(array2, '\n', len(array2))
+
+#if __name__ == "__main__":
+    #print(getDifference('provider1', 'provider2'))
+    #print(getPriceOf('Rasp. Pi-4702MQ', 'provider2'))
     #sbcSet = ['Rasp. Pi-4810MQ','Rasp. Pi-4960HQ','Rasp. Pi-4710HQ']
-    #checkAllPrices(sbcSet)
-    getFilter()
+    #abc = checkAllPrices(sbcSet)
+    #print(abc)
+    #getFilter()
