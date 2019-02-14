@@ -162,7 +162,7 @@ def getUsersOn(date):
         j = 0
         while j < len(date1):
             Name.append(getUserOf(pinlist[i],date1[j]))
-            print(Name)
+            #print(Name)
             j += 1
         i += 1
     return Name
@@ -276,7 +276,7 @@ def getMissing(slots):
     num = len(lines) - 3
     #print(num- len(set(answer)))
     return num- len(set(answer))
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #peopleToID()
     #IDToPin()
     #DataArray()
