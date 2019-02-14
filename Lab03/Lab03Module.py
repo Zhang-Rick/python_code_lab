@@ -30,7 +30,7 @@ def getStateByCounty(countyName):
         else:
             CountyPosition[county[2]].append([county[0],county[1]])
         i += 1
-    #print(CountyPosition)
+    print(CountyPosition)
     filename2 = os.path.join(DataPath, 'coordinates.dat')
     with open(filename2) as f:
         coordinateLines = f.read().splitlines()
@@ -93,7 +93,7 @@ def getCount(stateName2):
         else:
             statePosition[state[2]].append([state[0], state[1]])
         i += 1
-    #print(statePosition)
+    print(statePosition)
     filename = os.path.join(DataPath, 'counties.dat')
     with open(filename) as f:
         countyLines = f.read().splitlines()
@@ -154,7 +154,7 @@ def getCount(stateName2):
                     answer.append(list(CountyPosition.keys())[i])
             i += 1
         j += 1
-    #print(answer,'\n',len(answer))
+    print(answer,'\n',len(answer))
     return answer
     #if state not in statePosition.keys():
         #raise ValueError("ValueErroe")
@@ -193,9 +193,9 @@ def getReport():
         i += 1
     print(ExtensionTimesMap)
 
-#if __name__  == "__main__":
-    #getStateByCounty('Coshocton')
-    #getCount('Illinois')
+if __name__  == "__main__":
+    #print(getStateByCounty('1'))
+    #print(getCount('St. Louis'))
     #getReport()
     #find(47906)
     #print(getMinLatitude('Florida'))

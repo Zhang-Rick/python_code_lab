@@ -266,13 +266,16 @@ def getMissing(slots):
     while i < 5:
         slotMap[slots[i]] = bigarray[i]
         i += 1
-    i = 1
-    answer = set(slotMap[slots[0]])
+    i = 0
+    answer = []
     while i < len(slots):
-        answer |=  set(slotMap[slots[i]])
+        answer.append(slotMap[slots[i]])
         i += 1
+    answer = sum(answer,[])
+    #print(len(set(answer)))
     num = len(lines) - 3
-    #print(num- len(answer))
+    #print(num- len(set(answer)))
+    return num- len(set(answer))
 if __name__ == "__main__":
     #peopleToID()
     #IDToPin()
@@ -281,7 +284,7 @@ if __name__ == "__main__":
     #a = getPinFor('Bailey, Catherine','03/18')
     #print(type(a))
     #print(getUserOf('710','03/18'))
-    getUsersOn('04/15')
+    #getUsersOn('04/15')
     #getDifference('11:30AM-01:20PM', '01:30PM-03:20PM')
     #getCommon('01:30PM-03:20PM', '03:30PM-05:20PM')
-    #getMissing(['11:30AM-01:20PM', '01:30PM-03:20PM', '03:30PM-05:20PM'])
+    getMissing(['11:30AM-01:20PM', '01:30PM-03:20PM', '03:30PM-05:20PM'])

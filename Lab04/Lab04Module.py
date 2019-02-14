@@ -154,10 +154,10 @@ def getFilter():
         i += 1
     #print(array2, '\n', len(array2))
 
-#if __name__ == "__main__":
-    #print(getDifference('provider1', 'provider2'))
-    #print(getPriceOf('Rasp. Pi-4702MQ', 'provider2'))
-    #sbcSet = ['Rasp. Pi-4810MQ','Rasp. Pi-4960HQ','Rasp. Pi-4710HQ']
-    #abc = checkAllPrices(sbcSet)
-    #print(abc)
+if __name__ == "__main__":
+    print(getDifference('provider1', 'provider2'))
+    print(getPriceOf('Rasp. Pi-4702MQ', 'provider2'))
+    sbcSet = ['Rasp. Pi-4810MQ','Rasp. Pi-4960HQ','Rasp. Pi-4710HQ']
+    abc = checkAllPrices(sbcSet)
+    print(abc)
     #getFilter()
