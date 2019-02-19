@@ -28,7 +28,7 @@ def extractArguments(commandline):
 def extractNumerics(sentence):
     pattern = "([-+]?[0-9][\.][0-9]+[eE][-+]?[0-9]+|[-+]?[0-9]+[\.]+[0-9]+|[-+]?[0-9]+)"
     matches = re.findall(pattern,sentence)
-    #print(matches)
+    #print(matches)123
     return matches
 
 
