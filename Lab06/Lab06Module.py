@@ -28,7 +28,7 @@ def extractArguments(commandline):
 def extractNumerics(sentence):
     pattern = "([-+]?[0-9][\.][0-9]+[eE][-+]?[0-9]+|[-+]?[0-9]+[\.]+[0-9]+|[-+]?[0-9]+)"
     matches = re.findall(pattern,sentence)
-    print(matches)
+    #print(matches)
     return matches
 
 
@@ -36,4 +36,4 @@ def extractNumerics(sentence):
 
 if __name__ == "__main__":
     print(extractArguments("asdfasdfasd +v +i 2 +p /asdfasdf sadas"))
-    extractNumerics("with the electron's - 1.6022e-19 -110 -32.0 +55 3.1415 2.7 +6.0221E+023,12e")
+    print(extractNumerics("with the electron's - 1.6022e-19 -110 -32.0 +55 3.1415 2.7 +6.0221E+023,12e"))
