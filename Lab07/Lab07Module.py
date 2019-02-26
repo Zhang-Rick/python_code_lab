@@ -99,7 +99,7 @@ class Circle():
                 #print(6)
                 return True
             return False
-# x = Rectangle(tuple([(2)**(1.0/2)/2,(2)**(1.0/2)/2]),tuple([2,2]))
+# x = Rectangle(tuple([(2)**(1.0/2)/2,(2)**(1.0/2)/2]),tuple([2,2]))123
 # a = x.isSquare()
 # print(a)
 # b = (0.0,0.0)
