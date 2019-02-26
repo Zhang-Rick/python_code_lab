@@ -10,20 +10,19 @@ import re
 #######################################################
 
 def extractArguments(commandline):
-    pattern = "[\\+][a-z][ \t]+[^+\\ \t]+"
-    #print(123)
-    matches = re.findall(pattern,commandline)
+    matches = re.findall(r'([\\+][a-z])(\s+)([^+\\ ]+)',commandline)
+    print(matches)
     #print(type(matches),matches)
-    i = 0
-    output =[]
-    while i < len(matches):
-        pattern = "[\\+](?P<switch>[a-z])[ \t]+(?P<value>[\S]+)"
-        match = re.search(pattern,matches[i])
-        output.append(tuple([match["switch"],match["value"]]))
-        #print(output)
-        i += 1
-    #pattern = "[\\+](?P<switch>[\w])[ \t]+(?P<value>[\d])]"
-    return sorted(output)
+    # i = 0
+    # output = []
+    # while i < len(matches):
+    #     pattern = "[\\+](?P<switch>[a-z])[ \t]+(?P<value>[\S]+)"
+    #     match = re.search(pattern,matches[i])
+    #     output.append(tuple([match["switch"],match["value"]]))
+    #     #print(output)
+    #     i += 1
+    # #pattern = "[\\+](?P<switch>[\w])[ \t]+(?P<value>[\d])]"
+    # return sorted(output)
 
 def extractNumerics(sentence):
     pattern = "([-+]?[0-9][\.][0-9]+[eE][-+]?[0-9]+|[-+]?[0-9]+[\.]+[0-9]+|[-+]?[0-9]+)"
@@ -35,5 +34,5 @@ def extractNumerics(sentence):
 
 
 if __name__ == "__main__":
-    print(extractArguments("asdfasdfasd +v +i 2 +p /asdfasdf sadas"))
-    print(extractNumerics("with the electron's - 1.6022e-19 -110 -32.0 +55 3.1415 2.7 +6.0221E+023,12e"))
+    extractArguments("asdfasdfasd +v \i   2 +p /asdfasdf sadas")
+    # print(extractNumerics("with the electron's - 1.6022e-19 -110 -32.0 +55 3.1415 2.7 +6.0221E+023,12e"))

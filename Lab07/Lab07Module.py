@@ -61,37 +61,49 @@ class Circle():
                 return True
             return False
         if isinstance(other,Rectangle):
+
             rect = other
             dis1 = (self.center[0] - rect.lowerLeft[0])**2
             dis2 = (self.center[1] - rect.lowerLeft[1])**2
-            total = (dis1 + dis2)**(1.0/2)
-            if total < self.radius:
+            total1 = (dis1 + dis2)**(1.0/2)
+            if total1 < self.radius:
+                #print(1)
                 return True
             rect = other
             dis1 = (self.center[0] - rect.upperRight[0])**2
             dis2 = (self.center[1] - rect.upperRight[1])**2
-            total = (dis1 + dis2)**(1.0/2)
-            if total < self.radius:
+            total2 = (dis1 + dis2)**(1.0/2)
+            if total2 < self.radius:
+                #print(2)
                 return True
             rect = other
             dis1 = (self.center[0] - rect.lowerLeft[0]) ** 2
             dis2 = (self.center[1] - rect.upperRight[1]) ** 2
-            total = (dis1 + dis2) ** (1.0 / 2)
-            if total < self.radius:
+            total3 = (dis1 + dis2) ** (1.0 / 2)
+            if total3 < self.radius:
+                #print(3)
                 return True
             rect = other
             dis1 = (self.center[0] - rect.upperRight[0]) ** 2
             dis2 = (self.center[1] - rect.lowerLeft[1]) ** 2
-            total = (dis1 + dis2) ** (1.0 / 2)
-            if total < self.radius:
+            total4 = (dis1 + dis2) ** (1.0 / 2)
+            if total4 < self.radius:
+                #print(4)
                 return True
-            if self.center[0] > rect.lowerLeft[0] - self.radius:
+            if self.center[0] > rect.lowerLeft[0] - self.radius and self.center[0] < rect.upperRight[0] + self.radius and self.center[1] < rect.upperRight[1] - self.radius and self.center[1] > rect.lowerLeft[1] + self.radius:
+                #print(5)
+                #print(self.center)
+                #print(rect.lowerLeft)
                 return True
-            if self.center[0] < rect.upperRight[0] + self.radius:
-                return True
-            if self.center[1] < rect.upperRight[1] + self.radius:
-                return True
-            if self.center[1] > rect.lowerLeft[1] - self.radius:
+            if self.center[1] < rect.upperRight[1] + self.radius and self.center[1] > rect.lowerLeft[1] - self.radius and self.center[0] < rect.upperRight[0] - self.radius and self.center[0] > rect.lowerLeft[0] + self.radius:
+                #print(6)
                 return True
             return False
-
+# x = Rectangle(tuple([(2)**(1.0/2)/2,(2)**(1.0/2)/2]),tuple([2,2]))
+# a = x.isSquare()
+# print(a)
+# b = (0.0,0.0)
+# c = 1.0
+# k = Circle(b,c)
+# answer = k.intersectsWith(x)
+# print(answer)
