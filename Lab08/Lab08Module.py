@@ -77,6 +77,8 @@ class TimeSpan():
 
 
     def __lt__(self, other):
+        if not isinstance(other,TimeSpan):
+            raise TypeError("Comparison is not a valid TimeSpan class!")
         total1 = self.getTotalHours()
         total2 = other.getTotalHours()
         if total1 < total2:
@@ -84,6 +86,8 @@ class TimeSpan():
         return False
 
     def __le__(self, other):
+        if not isinstance(other,TimeSpan):
+            raise TypeError("Comparison is not a valid TimeSpan class!")
         total1 = self.getTotalHours()
         total2 = other.getTotalHours()
         if total1 <= total2:
@@ -91,6 +95,8 @@ class TimeSpan():
         return False
 
     def __eq__(self, other):
+        if not isinstance(other,TimeSpan):
+            raise TypeError("Comparison is not a valid TimeSpan class!")
         total1 = self.getTotalHours()
         total2 = other.getTotalHours()
         if total1 == total2:
@@ -98,6 +104,8 @@ class TimeSpan():
         return False
 
     def __ne__(self, other):
+        if not isinstance(other,TimeSpan):
+            raise TypeError("Comparison is not a valid TimeSpan class!")
         total1 = self.getTotalHours()
         total2 = other.getTotalHours()
         if total1 != total2:
@@ -105,6 +113,8 @@ class TimeSpan():
         return False
 
     def __gt__(self, other):
+        if not isinstance(other,TimeSpan):
+            raise TypeError("Comparison is not a valid TimeSpan class!")
         total1 = self.getTotalHours()
         total2 = other.getTotalHours()
         if total1 > total2:
@@ -112,6 +122,8 @@ class TimeSpan():
         return False
 
     def __ge__(self, other):
+        if not isinstance(other,TimeSpan):
+            raise TypeError("Comparison is not a valid TimeSpan class!")
         total1 = self.getTotalHours()
         total2 = other.getTotalHours()
         if total1 >= total2:
