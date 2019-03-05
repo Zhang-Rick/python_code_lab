@@ -57,7 +57,7 @@ class Circle():
             a = (circle[0]-self.center[0])**2
             b = (circle[1]-self.center[1])**2
             c = ( a + b)**(1.0/2)
-            if c < self.radius:
+            if c < self.radius * 2:
                 return True
             return False
         if isinstance(other,Rectangle):
