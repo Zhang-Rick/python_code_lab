@@ -54,7 +54,7 @@ class TimeSpan():
         if type(other) == type(1):
             if other <= 0:
                 raise ValueError("The input is less and equal to zero!")
-            #a = TimeSpan(self.weeks*other, self.days*other, self.days*other)
+            #a = TimeSpan(self.weeks*other, self.days*other, self.days*other)#123
             result = other * self.getTotalHours()
 
             hours = result % 24
