@@ -31,7 +31,7 @@ class TimeSpan():
             weeks = self.weeks
         days = self.days
         if self.hours < 10:
-            hours = '0' + str(self.hours)
+            hours = '0' + str(self.hours)# 09w 6d
         else:
             hours = self.hours
         return f"{weeks}W {days}D {hours}H"
