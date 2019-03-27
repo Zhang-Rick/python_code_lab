@@ -17,7 +17,7 @@ do
     do
     	a+=$(cat -eT $DataPath"/circuits/circuit_"$circuitID".dat")
     done
-  
+    
     b=$(echo $a | wc -c)
     echo $b
 done

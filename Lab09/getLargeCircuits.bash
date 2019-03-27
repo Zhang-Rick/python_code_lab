@@ -12,7 +12,9 @@ for circuitID in $circuitIDs
 do
 
  a=$(cat -eT $DataPath"/circuits/"$circuitID)
- if ['$a' -ge '$b']
+ c=$(echo $a | wc -c)
+ d=$(echo $b)
+ if ["$c" -ge "$d"]
  then
      echo circuitID | sort -u
 

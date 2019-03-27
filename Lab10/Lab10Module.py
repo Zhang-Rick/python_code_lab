@@ -126,6 +126,61 @@ class Package():
                 i += 1
             return (f"{zipcode1} => {zipcode1}, Cost = ${self.cost}")
 
+        def __lt__(self, other):
+                if not isinstance(other, Package):
+                    raise TypeError("Comparison is not a valid TimeSpan class!")
+                total1 = self.cost
+                total2 = other.cost
+                if total1 < total2:
+                    return True
+                return False
+
+        def __le__(self, other):
+                if not isinstance(other, Package):
+                    raise TypeError("Comparison is not a valid TimeSpan class!")
+                total1 = self.cost
+                total2 = other.cost
+                if total1 <= total2:
+                    return True
+                return False
+
+        def __eq__(self, other):
+                if not isinstance(other, Package):
+                    raise TypeError("Comparison is not a valid TimeSpan class!")
+                total1 = self.cost
+                total2 = other.cost
+                if total1 == total2:
+                    return True
+                return False
+
+        def __ne__(self, other):
+                if not isinstance(other, Package):
+                    raise TypeError("Comparison is not a valid TimeSpan class!")
+                total1 = self.cost
+                total2 = other.cost
+                if total1 != total2:
+                    return True
+                return False
+
+        def __gt__(self, other):
+                if not isinstance(other, Package):
+                    raise TypeError("Comparison is not a valid TimeSpan class!")
+                total1 = self.cost
+                total2 = other.cost
+                if total1 > total2:
+                    return True
+                return False
+
+        def __ge__(self, other):
+                if not isinstance(other, Package):
+                    raise TypeError("Comparison is not a valid TimeSpan class!")
+                total1 = self.cost
+                total2 = other.cost
+                if total1 >= total2:
+                    return True
+
+                return False
+
 
 
 if __name__ == "__main__":
