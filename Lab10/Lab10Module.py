@@ -102,18 +102,33 @@ class PackageGroup():
 
 class Package():
         def __init__(self, source,destination):
-            self.source = source
-            self.source = destination
+            self.source = str(source)
+            self.destination = str(destination)
 
-            self.source = calculateDistance(source,destination)
+            self.cost = round(calculateDistance(source,destination),2)
 
 
 
         def __str__(self):
-            return (f"{self.name}, {number} Shipments, Cost = ${self.cost}")
+            filename = os.path.join(DataPath, 'coordinates.dat')
+            with open(filename) as f:
+                lines = f.read().splitlines()
+            # print(lines)
+            i = 1
+            while i < len(lines):
+                sourceLati = float(lines[i].split('"')[5])
+                #print(i,lines[i].split(' "')[3].split('"')[1])
+                sourceLongti = float(lines[i].split('"')[7])
+                if(self.source.split(',')[0]==sourceLati,self.source.split(',')[1]==sourceLongti):
+                    zipcode1=lines[i].split('"')[1]
+                if (self.destination.split(',')[0] == sourceLati, self.destination.split(',')[1] == sourceLongti):
+                    zipcode2 = lines[i].split('"')[1]
+                i += 1
+            return (f"{zipcode1} => {zipcode1}, Cost = ${self.cost}")
 
 
 
 if __name__ == "__main__":
     print(getCost("99337", "35115"))
     loadpackages()
+    print(tuple([1,2])[1])
