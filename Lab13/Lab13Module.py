@@ -338,7 +338,7 @@ class PackageGroup():
         if not isinstance(other, Package):
             raise TypeError("This is not a package Class!")
         for elements in self.packages:
-            print(elements.company,elements.source,elements.destination)
+            #print(elements.company,elements.source,elements.destination)
             if elements.company == other.company and elements.source == other.source and elements.destination == other.destination:
                 return True
         return False
